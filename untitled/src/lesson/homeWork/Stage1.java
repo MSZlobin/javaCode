@@ -64,6 +64,17 @@ public class Stage1 {
 
         System.out.println(x);
 
+        // ПРодвинутая домашка  задача 2
+
+        byte a = 3;
+        byte b = 5;
+
+
+        System.out.println((int)Math.pow((a+b),2) );
+
+        // ПРодвинутая домашка  задача 3
+
+
 
 
     }
