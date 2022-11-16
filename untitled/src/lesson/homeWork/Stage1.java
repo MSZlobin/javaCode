@@ -74,6 +74,82 @@ public class Stage1 {
 
         // ПРодвинутая домашка  задача 3
 
+        boolean hasFuel = true;
+        boolean hasElectricsProblem = true;
+        boolean hasMotorProblem = true;
+        boolean hasTransmissionProblem = false;
+        boolean hasWheelsProblem = true;
+        byte totalProblem = 0;
+
+        int electricsProblemCoast = 5000;
+        int motorProblemCoast = 10000;
+        int transmissionProblemCoast = 4000;
+        int wheelsProblemCoast = 2000;
+        int totalCoast = 0;
+
+
+
+        if (hasElectricsProblem) {
+            totalProblem = (byte) (totalProblem + 1);
+        }
+        if (hasMotorProblem) {
+            totalProblem = (byte) (totalProblem + 1);
+        }
+        if (hasTransmissionProblem) {
+            totalProblem = (byte) (totalProblem + 1);
+        }
+        if (hasWheelsProblem) {
+            totalProblem = (byte) (totalProblem + 1);
+        }
+
+
+        if (hasFuel == false & totalProblem == 0) {
+            System.out.println("К оплате 1000");
+        } else if (totalProblem == 2) {
+            if (hasTransmissionProblem & hasMotorProblem ) {
+                System.out.println((transmissionProblemCoast+motorProblemCoast)*0.8);
+            } else if (hasTransmissionProblem & hasElectricsProblem) {
+                System.out.println((transmissionProblemCoast+electricsProblemCoast)*0.8);
+            } else {
+                if (hasElectricsProblem) {
+                    totalCoast = totalCoast + electricsProblemCoast;
+                }
+                if (hasMotorProblem) {
+                    totalCoast = totalCoast + motorProblemCoast;
+                }
+                if (hasTransmissionProblem) {
+                    totalCoast = totalCoast + transmissionProblemCoast;
+                }
+                if (hasWheelsProblem) {
+                    totalCoast = totalCoast + wheelsProblemCoast;
+                    System.out.println(totalCoast*0.9);
+                }
+            }
+        } else if (totalProblem <2) {
+            if (hasElectricsProblem) {
+                System.out.println(electricsProblemCoast);
+            } else if (hasMotorProblem) {
+                System.out.println(motorProblemCoast);
+            } else if (hasTransmissionProblem) {
+                System.out.println(transmissionProblemCoast);
+            } else if (hasWheelsProblem) {
+                System.out.println(wheelsProblemCoast);
+            }
+        } else {if (hasElectricsProblem) {
+            totalCoast = totalCoast + electricsProblemCoast;
+        }
+            if (hasMotorProblem) {
+                totalCoast = totalCoast + motorProblemCoast;
+            }
+            if (hasTransmissionProblem) {
+                totalCoast = totalCoast + transmissionProblemCoast;
+            }
+            if (hasWheelsProblem) {
+                totalCoast = totalCoast + wheelsProblemCoast;
+                System.out.println(totalCoast*0.9);
+            }
+
+        }
 
 
 
